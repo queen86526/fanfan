@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<范范解忧 html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -112,7 +112,7 @@
         <div class="answer-box">
             <div class="answer" id="randomAnswer">思考中...</div>
         </div>
-        <p class="instruction">重新打开网页获取新答案</p>
+        <p class="instruction">恭喜🎉中奖</p>
     </div>
 
     <script>
