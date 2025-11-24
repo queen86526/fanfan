@@ -1,4 +1,4 @@
-<范范解忧 html>
+< >
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -10,170 +10,292 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            font-family: "楷体", "SimKai", serif;
+            background: #0a0a0a;
+            color: #D4AF37;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        /* 梦幻背景效果 */
+        
         body::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
+                radial-gradient(circle at 20% 30%, rgba(120, 90, 40, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(90, 70, 30, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(110, 80, 35, 0.1) 0%, transparent 50%);
+            z-index: -1;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
+        
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.85);
+            border: 3px solid #D4AF37;
+            border-radius: 5px;
+            padding: 40px 20px;
+            box-shadow: 
+                0 0 20px rgba(212, 175, 55, 0.2),
+                inset 0 0 30px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
-            max-width: 90%;
-            width: 500px;
         }
-
-        .title {
-            color: #fff;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 300;
-            letter-spacing: 2px;
+        
+        .seal {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid #D4AF37;
+            border-radius: 5px;
+            opacity: 0.3;
+            transform: rotate(45deg);
         }
-
-        .answer-box {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 40px 20px;
-            margin: 20px 0;
+        
+        .seal-top-left {
+            top: 15px;
+            left: 15px;
+        }
+        
+        .seal-top-right {
+            top: 15px;
+            right: 15px;
+        }
+        
+        .seal-bottom-left {
+            bottom: 15px;
+            left: 15px;
+        }
+        
+        .seal-bottom-right {
+            bottom: 15px;
+            right: 15px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 10px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+        
+        .result-container {
+            margin: 50px 0;
             min-height: 200px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            position: relative;
         }
-
-        .answer {
-            font-size: 3.5em;
-            font-weight: bold;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            line-height: 1.2;
-        }
-
-        .instruction {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1em;
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        /* 闪烁的星星效果 */
-        .star {
+        
+        .result-container::before {
+            content: "「";
             position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
+            left: -30px;
+            top: 0;
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.3);
         }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1); }
+        
+        .result-container::after {
+            content: "」";
+            position: absolute;
+            right: -30px;
+            bottom: 0;
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .answer {
+            font-size: 3.2rem;
+            font-weight: bold;
+            color: #D4AF37;
+            text-shadow: 
+                0 0 10px rgba(212, 175, 55, 0.5),
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin: 20px 0;
+            line-height: 1.3;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .instructions {
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #B8860B;
+            line-height: 1.6;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 20px;
+        }
+        
+        .mystic-symbol {
+            position: absolute;
+            font-size: 120px;
+            color: rgba(212, 175, 55, 0.05);
+            z-index: -1;
+            user-select: none;
+        }
+        
+        .symbol-1 {
+            top: 10%;
+            left: 10%;
+            transform: rotate(15deg);
+        }
+        
+        .symbol-2 {
+            bottom: 10%;
+            right: 10%;
+            transform: rotate(-15deg);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 5px;
+            }
+            
+            .answer {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .mystic-symbol {
+                font-size: 80px;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">范范解忧</h1>
-        <div class="answer-box">
-            <div class="answer" id="randomAnswer">思考中...</div>
+    <div class="mystic-symbol symbol-1">☯</div>
+    <div class="mystic-symbol symbol-2">䷀</div>
+    
+    <div class="seal seal-top-left"></div>
+    <div class="seal seal-top-right"></div>
+    <div class="seal seal-bottom-left"></div>
+    <div class="seal seal-bottom-right"></div>
+    
+    <div class="container fade-in">
+        <h1>范范解忧</h1>
+        
+        <div class="result-container">
+            <div class="answer" id="randomAnswer">天机正在推演中...</div>
         </div>
-        <p class="instruction">恭喜🎉中奖</p>
+        
+        <div class="instructions">
+            <p>天机难测，此卦只显一次</p>
+            <p>若欲再卜，需重开此页</p>
+        </div>
     </div>
 
     <script>
-        // 自定义答案列表
-        const answers = [
-            "护符福袋",
-            "免费占卜【3张牌】", 
-            "水晶手串福袋",
-            "护符福袋",
-            "护符福袋",
-            "护符福袋",
-            "护符福袋",
-            "护符福袋",
-            "免费占卜【3张牌】",
-            "护符福袋",
-            "水晶手串福袋",
-            "大奖"
-        ];
-
-        // 使用sessionStorage来保持会话期间的答案一致性
-        function getRandomAnswer() {
-            // 检查sessionStorage中是否已有答案
-            let currentAnswer = sessionStorage.getItem('fanfanAnswer');
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查是否已经生成了结果
+            if (!sessionStorage.getItem('fanfanAnswer')) {
+                // 延迟显示结果，增加神秘感
+                setTimeout(generateRandomAnswer, 1500);
+            } else {
+                setTimeout(displayStoredAnswer, 1000);
+            }
+        });
+        
+        function generateRandomAnswer() {
+            // 定义答案和概率
+            const answers = [
+                { text: "护符福袋", probability: 60 },
+                { text: "免费占卜【3张牌】", probability: 15 },
+                { text: "大奖", probability: 5 },
+                { text: "水晶手串福袋", probability: 20 }
+            ];
             
-            if (!currentAnswer) {
-                // 如果没有，则随机选择一个答案并存储
-                const randomIndex = Math.floor(Math.random() * answers.length);
-                currentAnswer = answers[randomIndex];
-                sessionStorage.setItem('fanfanAnswer', currentAnswer);
+            // 生成随机数（0-99）
+            const randomValue = Math.floor(Math.random() * 100);
+            
+            // 根据概率选择答案
+            let cumulativeProbability = 0;
+            let selectedAnswer = null;
+            
+            for (const answer of answers) {
+                cumulativeProbability += answer.probability;
+                if (randomValue < cumulativeProbability) {
+                    selectedAnswer = answer;
+                    break;
+                }
             }
             
-            return currentAnswer;
+            // 存储结果到sessionStorage
+            sessionStorage.setItem('fanfanAnswer', JSON.stringify(selectedAnswer));
+            
+            // 显示结果
+            displayAnswer(selectedAnswer);
         }
-
-        // 显示随机答案
-        document.getElementById('randomAnswer').textContent = getRandomAnswer();
-
-        // 创建梦幻星星效果
-        function createStars() {
-            const starCount = 20;
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                
-                // 随机大小和位置
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.top = Math.random() * 100 + 'vh';
-                
-                // 随机动画延迟
-                star.style.animationDelay = Math.random() * 5 + 's';
-                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                
-                document.body.appendChild(star);
-            }
+        
+        function displayStoredAnswer() {
+            const storedAnswer = JSON.parse(sessionStorage.getItem('fanfanAnswer'));
+            displayAnswer(storedAnswer);
         }
-
-        // 初始化星星效果
-        createStars();
+        
+        function displayAnswer(answer) {
+            const answerElement = document.getElementById('randomAnswer');
+            
+            // 清空内容准备显示新结果
+            answerElement.textContent = "";
+            answerElement.style.opacity = '0';
+            
+            // 逐字显示效果
+            let index = 0;
+            const text = answer.text;
+            const timer = setInterval(() => {
+                if (index < text.length) {
+                    answerElement.textContent += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, 100);
+            
+            // 淡入效果
+            setTimeout(() => {
+                answerElement.style.transition = 'opacity 1s ease';
+                answerElement.style.opacity = '1';
+            }, 500);
+        }
     </script>
 </body>
 </html>
