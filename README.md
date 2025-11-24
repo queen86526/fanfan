@@ -1,4 +1,4 @@
-< >
+< hrml>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -215,12 +215,12 @@
         <h1>范范解忧</h1>
         
         <div class="result-container">
-            <div class="answer" id="randomAnswer">天机正在推演中...</div>
+            <div class="answer" id="randomAnswer">奖品正在加载中...</div>
         </div>
         
         <div class="instructions">
-            <p>天机难测，此卦只显一次</p>
-            <p>若欲再卜，需重开此页</p>
+            <p>恭喜中奖</p>
+            <p>谢谢支持</p>
         </div>
     </div>
 
