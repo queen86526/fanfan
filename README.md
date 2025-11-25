@@ -241,7 +241,7 @@
                 { text: "护符福袋", probability: 60 },
                 { text: "免费占卜【3张牌】", probability: 15 },
                 { text: "大奖", probability: 5 },
-                { text: "水晶手串福袋", probability: 20 }
+                { text: "水晶福袋", probability: 20 }
             ];
             
             // 生成随机数（0-99）
